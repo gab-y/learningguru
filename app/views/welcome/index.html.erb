@@ -24,8 +24,9 @@
 		var picker = new google.picker.PickerBuilder()
 			.addView(new google.picker.DocsView())
 			.setOAuthToken(oauthToken)
-			.setDeveloperKey('AIzaSyAvm_ywBdMC2dwyaAUVqkyDVNvEM4BcRiQ')
+			//.setDeveloperKey('AIzaSyAvm_ywBdMC2dwyaAUVqkyDVNvEM4BcRiQ')
 			.build();
+		picker.key = 'AIzaSyAvm_ywBdMC2dwyaAUVqkyDVNvEM4BcRiQ';
 		picker.setVisible(true);
 	}
 	</script>
