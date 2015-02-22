@@ -1,2 +1,34 @@
-<h2> Good morning Vietnam !</h2>
-<p> It's <%= Time.now %> </p>
+<body>
+	<script>
+	function onApiLoad(){
+		gapi.load('auth',{'callback': onAuthApiLoad});
+		gapi.load('picker');
+	}
+
+	function onAuthApiLoad(){
+		window.gapi.auth.authorize({
+			'client_id': '43268607343-a7ob6jf2aq4sn20n6tee4vkcra1iara7.apps.googleusercontent.com',
+			'scope': ['https://www.googleapis.com/auth/drive.file']
+		}, handleAuthResult);
+	}
+
+	var oauthToken;
+	function handleAuthResult(authResult){
+		if (authResult && !authResult.error){
+			oauthToken = authResult.access_token;
+		}
+		createPicker();
+	}
+
+	function createPicker(){
+		var picker = new google.picker.PickerBuilder()
+			.addView(new google.picker.DocsView())
+			.setOAuthToken(oauthToken)
+			.setDeveloperKey('AIzaSyAvm_ywBdMC2dwyaAUVqkyDVNvEM4BcRiQ')
+			.build();
+		picker.setVisible(true);
+	}
+	</script>
+	<script type="text/javascript" src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>
+</body>
+
