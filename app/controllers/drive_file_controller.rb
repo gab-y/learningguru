@@ -10,8 +10,14 @@ class DriveFileController < ApplicationController
   		application_version: '0.0.1'
   	)
   	auth = client.authorization
+
+  	#https://developers.google.com/accounts/docs/OpenIDConnect#exchangecode 
   	auth.code = params[:code]
-  	auth.grant_type = 'refresh_token'
+  	auth.client_id = '43268607343-a7ob6jf2aq4sn20n6tee4vkcra1iara7.apps.googleusercontent.com'
+  	auth.client_secret = 'MZTa2NhRx05KmK2cTgDHj8Wp'
+  	auth.redirect_uri = 'https://obscure-refuge-6806.herokuapp.com/drive_file/open'
+  	auth.grant_type = 'authorization_code'
+
   	auth.fetch_access_token!
   	#drive = client.discovered_api('drive', 'v2')
   	session = GoogleDrive.login_with_auth(auth.access_token)
