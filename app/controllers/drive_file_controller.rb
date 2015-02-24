@@ -5,9 +5,10 @@ class DriveFileController < ApplicationController
   def open
   	#From params[:fileId] gets the content of this file, and update the app data
   	state = MultiJson.decode(params[:state] || '{}')
-  	client = Google::APIClient.new
-  	client.application_name = 'Learning Guru'
-  	client.application_version = '0.0.1'
+  	client = Google::APIClient.new(
+  		application_name: 'Learning Guru',
+  		application_version: '0.0.1'
+  	)
   	#client.code = params[:code]
   	client.fetch_access_token!
   	#drive = client.discovered_api('drive', 'v2')
