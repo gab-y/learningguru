@@ -9,10 +9,10 @@ class DriveFileController < ApplicationController
   		application_name: 'Learning Guru',
   		application_version: '0.0.1'
   	)
-  	#client.code = params[:code]
-  	client.fetch_access_token!
+  	client.auth.code = params[:code]
+  	client.auth.fetch_access_token!
   	#drive = client.discovered_api('drive', 'v2')
-  	session = GoogleDrive.login_with_auth(client.access_token)
+  	session = GoogleDrive.login_with_auth(client.auth.access_token)
 
   	if state['action'] == 'open'
   		#result = client.execute(
