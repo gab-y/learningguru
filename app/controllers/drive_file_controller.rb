@@ -6,7 +6,9 @@ class DriveFileController < ApplicationController
   	#From params[:fileId] gets the content of this file, and update the app data
   	state = MultiJson.decode(params[:state] || '{}')
   	client = Google::APIClient.new
-  	client.code = params[:code]
+  	client.application_name = 'Learning Guru'
+  	client.application_version = '0.0.1'
+  	#client.code = params[:code]
   	client.fetch_access_token!
   	#drive = client.discovered_api('drive', 'v2')
   	session = GoogleDrive.login_with_auth(client.access_token)
