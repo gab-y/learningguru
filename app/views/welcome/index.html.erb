@@ -8,7 +8,11 @@
 	function onAuthApiLoad(){
 		window.gapi.auth.authorize({
 			'client_id': '43268607343-a7ob6jf2aq4sn20n6tee4vkcra1iara7.apps.googleusercontent.com',
-			'scope': ['https://www.googleapis.com/auth/drive.file', 'https://www.googleapis.com/auth/drive.install']
+			'scope': [
+				'https://www.googleapis.com/auth/drive.file', 
+				'https://www.googleapis.com/auth/drive.install',
+				'https://www.googleapis.com/auth/drive.appdata'
+			]
 		}, handleAuthResult);
 	}
 

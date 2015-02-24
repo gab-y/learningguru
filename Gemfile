@@ -47,5 +47,7 @@ gem 'rails_12factor', group: :production
 
 gem 'google-api-client'
 
+gem 'google_drive'
+
 ruby "2.2.0"
 

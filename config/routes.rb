@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'exam/new'
+
+  get 'exam/create'
+
+  get 'drive_data/create'
+
+  get 'drive_data/update'
+
+  get 'drive_data/show'
+
+  get 'drive_file/open'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +65,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  get ':controller(/:action(/:id))'
 end
