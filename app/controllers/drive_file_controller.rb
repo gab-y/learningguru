@@ -11,6 +11,7 @@ class DriveFileController < ApplicationController
   	)
   	auth = client.authorization
   	auth.code = params[:code]
+  	auth.grant_type = 'refresh_token'
   	auth.fetch_access_token!
   	#drive = client.discovered_api('drive', 'v2')
   	session = GoogleDrive.login_with_auth(auth.access_token)
