@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Learning Guru
 
-Things you may want to cover:
+This is a little project which goal is to add a little interactivity between you and your old vocab lists. How ? By reading them from your Drive and give you some quizzes. And you can still use and edit your lists !
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Work in progress :
+* step 1 : read a spreadsheet through google API (direct opening from Drive) COMPLETED
+* step 2 : create a quizz and save the results in Drive app folder
+* step 3 : give the user an interface !
+* futures : different quizzes, google doc, images, more than just vocabulary...
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Ruby 2.2
+* Rails 4.1
+* Google Api Client
+* GoogleDrive
+
+* Tests on heroku
+
