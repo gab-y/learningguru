@@ -20,7 +20,7 @@ class DriveFileController < ApplicationController
 
   	auth.fetch_access_token!
   	#drive = client.discovered_api('drive', 'v2')
-  	session = GoogleDrive.login_with_auth(auth.access_token)
+  	session = GoogleDrive.login_with_oauth(auth.access_token)
 
   	if state['action'] == 'open'
   		#result = client.execute(
