@@ -1,11 +1,12 @@
 <h1><%= @title %></h1>
 
-<% nb_cols = @spreadsheet.worksheets[0].num_cols()%>
+<% worksheet = @spreadsheet.worksheets[0] %>
+<% nb_cols = worksheet.num_cols()%>
 <% i = 1 %>
-<% until (worksheet[0][i,1].nil? && worksheet[0][i+1,1].nil?) %>
+<% until (worksheet[i,1].nil? && worksheet[i+1,1].nil?) %>
 	<p>
 	<% for j in 1..nb_cols %>
-		<%= worksheet[0][i,j] %>
+		<%= worksheet[i,j] %>
 	<% end %>
 	<% i += 1 %>
 	</p>
