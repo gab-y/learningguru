@@ -1,11 +1,4 @@
 <h1>DriveFile#open</h1>
 <p>Find me in app/views/drive_file/open.html.erb</p>
 
-<% @spreadsheet.worksheets.each do |worksheet| %>
-	<!--% worksheet.each do |a|%>
-		<% a.each do |b|%>
-			<p><%= b %></p>
-		<% end %>
-	<% end %>-->
-	<% worksheet[1,1] %>
-<% end %>
+<%= @spreadsheet.worksheets[0][1, 1]%>
