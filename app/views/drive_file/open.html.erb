@@ -2,8 +2,8 @@
 <p>Find me in app/views/drive_file/open.html.erb</p>
 
 <% @spreadsheet.worksheets.each do |worksheet| %>
-	<% worksheet.each |a|%>
-		<% a.each |b|%>
+	<% worksheet.each do |a|%>
+		<% a.each do |b|%>
 			<p><%= b %></p>
 		<% end %>
 	<% end %>
