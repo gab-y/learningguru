@@ -3,7 +3,7 @@
 <% worksheet = @spreadsheet.worksheets[0] %>
 <% nb_cols = worksheet.num_cols()%>
 <% i = 1 %>
-<% until (worksheet[i,1].nil? && worksheet[i+1,1].nil?) %>
+<% until (worksheet[i,1].blank? && worksheet[i+1,1].blank?) %>
 	<p>
 	<% for j in 1..nb_cols %>
 		<%= worksheet[i,j] %>
