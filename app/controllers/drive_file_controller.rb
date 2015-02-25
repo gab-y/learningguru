@@ -27,7 +27,8 @@ class DriveFileController < ApplicationController
   		#	api_method: drive.files.get,
   		#	parameters: {fileId: state['ids'][0]}
   		#)
-  		@file = session.file_by_id(state['exportIds'][0])
+  		file = session.file_by_id(state['exportIds'][0])
+  		@spreadsheet = session.spreadsheet_by_title(file.title)
   	end
   end
 end
