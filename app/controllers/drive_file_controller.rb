@@ -28,7 +28,8 @@ class DriveFileController < ApplicationController
   		#	parameters: {fileId: state['ids'][0]}
   		#)
   		file = session.file_by_id(state['exportIds'][0])
-  		@spreadsheet = session.spreadsheet_by_title(file.title)
+  		@title = file.title
+  		@spreadsheet = session.spreadsheet_by_title(@title)
   	end
   end
 end
